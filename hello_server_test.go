@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestGreetingSpecificJohn(t *testing.T) {
-	greeting := CreateGreeting("John")
+	greeting := CreateGreeting("John1")
 	if greeting != "Hello, John\n" {
 		t.Errorf("Greeting was incorrect, got: %s, want: %s.", greeting, "Hello, John\n")
 	}
