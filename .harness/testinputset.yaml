@@ -1,0 +1,15 @@
+inputSet:
+  pipeline:
+    identifier: Build_go_pipeline_sample_1688062987140
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: main
+            type: branch
+    object Object: properties.ci.codebase
+  name: testinputset
+  identifier: testinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
