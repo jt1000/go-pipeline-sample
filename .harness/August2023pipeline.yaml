@@ -47,7 +47,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
-                      echo <+var age = 18;
+                      <+var age = 18;
                       if (age >= 18) {
                         "You are an adult";
                       } else {
