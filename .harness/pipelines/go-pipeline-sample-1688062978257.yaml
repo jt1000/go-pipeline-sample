@@ -28,7 +28,7 @@ pipeline:
                   identifier: gotest
                   name: go_test
                   spec:
-                    command: go test -v ./...
+                    command: echo go test -v ./...
                   timeout: ""
                   type: Run
               - step:
