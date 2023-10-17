@@ -31,17 +31,6 @@ pipeline:
                     command: go test -v ./...
                   timeout: ""
                   type: Run
-              - step:
-                  identifier: dockerbuild
-                  name: docker_build
-                  spec:
-                    image: plugins/docker
-                    settings:
-                      dry_run: "true"
-                      repo: hello/world
-                      tags: latest
-                  timeout: ""
-                  type: Plugin
           platform:
             arch: Amd64
             os: Linux
@@ -49,3 +38,22 @@ pipeline:
             spec: {}
             type: Cloud
         type: CI
+    - stage:
+        name: email_notification
+        identifier: email_notification
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: Email
+                  name: Email_1
+                  identifier: Email_1
+                  spec:
+                    to: jateen.bhatt@harness.io
+                    cc: ""
+                    subject: test notification
+                    body: this is a test notification
+                  timeout: 10m
+        tags: {}
