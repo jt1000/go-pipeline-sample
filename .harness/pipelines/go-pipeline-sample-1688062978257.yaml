@@ -53,7 +53,7 @@ pipeline:
                   spec:
                     to: jateen.bhatt@harness.io
                     cc: ""
-                    subject: test notification
-                    body: this is a test notification
+                    subject: DPC_Direct3X_<+pipeline.stages.Clone.variables.Environment>_<+pipeline.stages.Clone.variables.Scope>_Automation
+                    body: <+pipeline.stages.Clone.spec.execution.steps.CodeBuild.output.outputVariables.result>
                   timeout: 10m
         tags: {}
