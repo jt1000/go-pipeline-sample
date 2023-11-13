@@ -38,6 +38,12 @@ pipeline:
             spec: {}
             type: Cloud
         type: CI
+        variables:
+          - name: releaseTicket
+            type: String
+            description: ""
+            required: false
+            value: <+input>.regex(^CHG\d{8}$)
     - stage:
         name: email_notification
         identifier: email_notification
