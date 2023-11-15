@@ -33,7 +33,7 @@ pipeline:
                   type: Run
           platform:
             os: MacOS
-            arch: Arm64
+            arch: Amd64
           runtime:
             type: Cloud
             spec: {}
