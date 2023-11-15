@@ -32,11 +32,11 @@ pipeline:
                   timeout: ""
                   type: Run
           platform:
+            os: MacOS
             arch: Amd64
-            os: Linux
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
         variables:
           - name: releaseTicket
