@@ -33,7 +33,7 @@ pipeline:
                   timeout: ""
                   type: Run
           platform:
-            os: MacOS
+            os: Linux
             arch: Amd64
           runtime:
             type: Cloud
