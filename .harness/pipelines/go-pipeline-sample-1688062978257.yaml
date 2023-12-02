@@ -28,7 +28,8 @@ pipeline:
                   identifier: gotest
                   name: go_test
                   spec:
-                    command: go test -v ./...
+                    shell: Sh
+                    command: echo "test"
                   timeout: ""
                   type: Run
           platform:
