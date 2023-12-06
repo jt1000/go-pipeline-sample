@@ -29,7 +29,8 @@ pipeline:
                   name: go_test
                   spec:
                     shell: Sh
-                    command: echo "test"
+                    command: |
+                      echo Version parsed by regex is <+regex.extract("\d+(\.\d+)+|\d+", <+artifact.metadata.fileName>)>
                   timeout: ""
                   type: Run
           platform:
