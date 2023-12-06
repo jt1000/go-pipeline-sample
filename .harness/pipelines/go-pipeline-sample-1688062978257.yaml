@@ -31,6 +31,7 @@ pipeline:
                     shell: Bash
                     command: |
                       echo Version parsed by regex is <+regex.extract("\d+(\.\d+)+|\d+", <+artifact.metadata.fileName>)>
+                      curl -sS -X POST -H 'Content-Type: application/json' http://assist-npn-p-1.sys.ds.wolseley.com:8080/deployment/mark --data '{"service":"<+service.name>", "serverName":"<+instance.hostName>", "version":"<+regex.extract("\d+(\.\d+)+|\d+", <+artifact.metadata.fileName>)>", "update":"true"}' || true
                   timeout: ""
                   type: Run
           platform:
