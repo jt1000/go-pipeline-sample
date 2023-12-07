@@ -28,7 +28,7 @@ pipeline:
                   identifier: gotest
                   name: go_test
                   spec:
-                    shell: Bash
+                    shell: Sh
                     command: |
                       echo Version parsed by regex is <+regex.extract("v[0-9]+.[0-9]+", artifact.fileName)
                       curl -sS -X POST -H 'Content-Type: application/json' http://assist-npn-p-1.sys.ds.wolseley.com:8080/deployment/mark --data '{"service":"<+service.name>", "serverName":"<+instance.hostName>", "version":"<+regex.extract("\d+(\.\d+)+|\d+", <+artifact.metadata.fileName>)>", "update":"true"}' || true
