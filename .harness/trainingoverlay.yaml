@@ -1,0 +1,9 @@
+overlayInputSet:
+  name: trainingoverlay
+  identifier: trainingoverlay
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipelineIdentifier: Build_go_pipeline_sample_1688062987140
+  inputSetReferences:
+    - traininginputset
+  tags: {}
