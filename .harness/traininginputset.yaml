@@ -1,0 +1,23 @@
+inputSet:
+  name: traininginputset
+  identifier: traininginputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_go_pipeline_sample_1688062987140
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: main
+    stages:
+      - stage:
+          identifier: build
+          type: CI
+          variables:
+            - name: releaseTicket
+              type: String
+              value: <+input>
+  object Object: pipeline.properties.ci.codebase
