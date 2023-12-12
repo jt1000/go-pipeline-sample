@@ -29,7 +29,7 @@ pipeline:
                       identifier: Run_4
                       spec:
                         shell: Sh
-                        command: becho "test"
+                        command: echo "test"
               - step:
                   identifier: gotest
                   name: go_test
