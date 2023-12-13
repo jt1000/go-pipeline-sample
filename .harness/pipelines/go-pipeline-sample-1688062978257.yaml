@@ -45,6 +45,7 @@ pipeline:
             description: ""
             required: false
             value: <+input>.regex(^CHG\d{8}$)
+        description: ""
     - stage:
         name: email_notification
         identifier: email_notification
