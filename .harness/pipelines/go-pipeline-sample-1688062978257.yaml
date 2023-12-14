@@ -21,7 +21,12 @@ pipeline:
                   identifier: gobuild
                   name: go_build
                   spec:
-                    command: go build
+                    shell: Sh
+                    command: |-
+                      sudo apt-get update
+                      sudo apt-get install -y openjdk-17-jdk
+                      sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+                      sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
                   timeout: ""
                   type: Run
               - step:
@@ -29,9 +34,17 @@ pipeline:
                   name: go_test
                   spec:
                     shell: Sh
-                    command: echo "test"
+                    command: |
+                      curl -I https://repo.maven.apache.org/maven2/com/rudderstack/android/sdk/core/1.21.0/core-1.21.0.pom
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  name: Run_3
+                  identifier: Run_3
+                  spec:
+                    shell: Sh
+                    command: ./gradlew androidDependencies
           platform:
             os: Linux
             arch: Amd64
