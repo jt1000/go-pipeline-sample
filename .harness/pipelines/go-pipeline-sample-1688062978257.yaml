@@ -51,6 +51,11 @@ pipeline:
           runtime:
             type: Cloud
             spec: {}
+          caching:
+            enabled: true
+            paths:
+              - .gradle
+            key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
         type: CI
         variables:
           - name: releaseTicket
