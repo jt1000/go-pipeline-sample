@@ -38,13 +38,6 @@ pipeline:
                       curl -I https://repo.maven.apache.org/maven2/com/rudderstack/android/sdk/core/1.21.0/core-1.21.0.pom
                   timeout: ""
                   type: Run
-              - step:
-                  type: Run
-                  name: Run_3
-                  identifier: Run_3
-                  spec:
-                    shell: Sh
-                    command: ./gradlew androidDependencies
               - parallel:
                   - step:
                       type: RunTests
