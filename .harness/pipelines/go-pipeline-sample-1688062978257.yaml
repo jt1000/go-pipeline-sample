@@ -38,37 +38,6 @@ pipeline:
                       curl -I https://repo.maven.apache.org/maven2/com/rudderstack/android/sdk/core/1.21.0/core-1.21.0.pom
                   timeout: ""
                   type: Run
-              - parallel:
-                  - step:
-                      type: RunTests
-                      name: RunTests_1
-                      identifier: RunTests_1
-                      spec:
-                        language: Java
-                        buildTool: Bazel
-                        args: clean test
-                        runOnlySelectedTests: true
-                        reports:
-                          type: JUnit
-                          spec:
-                            paths:
-                              - "**/test1.xml"
-                        enableTestSplitting: false
-                  - step:
-                      type: RunTests
-                      name: RunTests_2
-                      identifier: RunTests_2
-                      spec:
-                        language: Java
-                        buildTool: Bazel
-                        args: test
-                        runOnlySelectedTests: true
-                        reports:
-                          type: JUnit
-                          spec:
-                            paths:
-                              - "**/test2.xml"
-                        enableTestSplitting: false
           platform:
             os: Linux
             arch: Amd64
