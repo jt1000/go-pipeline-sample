@@ -94,7 +94,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "<+pipeline.properties.ci.codebase.build.spec.branch>
+                        script: echo "<+pipeline.properties.ci.codebase.build.spec.branch>"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
