@@ -107,3 +107,26 @@ pipeline:
                     body: <+pipeline.stages.Clone.spec.execution.steps.CodeBuild.output.outputVariables.result>
                   timeout: 10m
         tags: {}
+    - stage:
+        name: variableteststage
+        identifier: variableteststage
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "<+pipeline.properties.ci.codebase.build.spec.branch>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
