@@ -34,8 +34,9 @@ pipeline:
                   name: go_test
                   spec:
                     shell: Sh
-                    command: |
-                      curl -I https://repo.maven.apache.org/maven2/com/rudderstack/android/sdk/core/1.21.0/core-1.21.0.pom
+                    command: |-
+                      curl -I https://repo.maven.a
+                      echo <+pipeline.variables.environmentRef>
                   timeout: ""
                   type: Run
           platform:
